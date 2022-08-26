@@ -14,7 +14,5 @@ class Student < Person
     classroom.students.push(self) unless classroom.students.include?(self)
   end
 
-  def classroom
-    @classroom
-  end
+  attr_reader :classroom
 end
