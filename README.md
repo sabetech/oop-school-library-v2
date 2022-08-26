@@ -19,13 +19,15 @@ To get a local copy up and running follow these simple example steps.
 
 ### Install
 
+- Ruby
+
 ### Using it Locally
 
 - Clone the project
 
-git clone https://github.com/sabetech/oop-school-library-v2
+git clone https://github.com/sabetech/decode-morse-code
 
-cd oop-school-library-v2
+cd ruby-oop-school-library
 
 - To Start the programs
 
