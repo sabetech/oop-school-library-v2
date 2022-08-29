@@ -2,6 +2,8 @@ require './student'
 require './teacher'
 require './book'
 require './rental'
+require './book_creator.rb'
+require './person_creator.rb'
 class App
   def initialize
     @books = []
@@ -9,7 +11,7 @@ class App
     @rentals = []
   end
 
-  def run
+def run
     loop do
       puts 'Please choose an option by entering a number:'
       puts '1. list all books'
@@ -77,11 +79,8 @@ class App
   end
 
   def create_book
-    print 'Enter a book title: '
-    title = gets.chomp
-    print 'Enter a book author: '
-    author = gets.chomp
-    @books.push(Book.new(title, author))
+    
+    @books << BookCreator.new.return_new_book()
     puts 'The book is created successfuly'
   end
 
@@ -118,15 +117,9 @@ class App
   end
 
   def create_somebody()
-    print 'Do you want to create Student (1) or Teacher (2)? [Input the number]: '
-    person_type = gets.chomp.to_i
-    print 'Age: '
-    age = gets.chomp
-    print 'Name: '
-    name = gets.chomp
-    print 'Enter the student\'s Classroom'
-    classroom = gets.chomp
-    create_person(age, classroom, name, person_type)
+    person = PersonCreator.new.person
+    @persons << person if (person != nil)
+
   end
 
   # rubocop:disable Metrics/MethodLength
