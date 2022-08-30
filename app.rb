@@ -63,7 +63,6 @@ class App
   end
 
   def list_rentals()
-    
     if @rentals.length.zero?
       puts 'There is no rental in the list. Please add a rental!'
     else
