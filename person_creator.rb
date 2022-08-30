@@ -24,10 +24,10 @@ class PersonCreator
   end
 
   def new_student(age, name)
-    print 'Parent permission [y/n]'
+    print 'Parent permission [y/n]: '
     parent_permission = gets.chomp
 
-    print 'Classroom'
+    print 'Classroom: '
     classroom = gets.chomp
 
     case parent_permission

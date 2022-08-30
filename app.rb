@@ -63,14 +63,14 @@ class App
   end
 
   def list_rentals()
-    puts "\nID of the Person: "
-    list_people
-    id = gets.chomp.to_i
-    puts 'List of Rentals: '
-
+    
     if @rentals.length.zero?
       puts 'There is no rental in the list. Please add a rental!'
     else
+      @list_persons.print
+      puts "\nID of the Person: "
+      id = gets.chomp.to_i
+      puts "\nList of Rentals"
       @rentals.each do |rental|
         puts "Date: #{rental.date}. Book: '#{rental.book.title}' by #{rental.book.author}" if rental.person.id == id
       end

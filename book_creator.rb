@@ -3,10 +3,10 @@ class BookCreator
   attr_reader :title, :author
 
   def initialize
-    print 'Enter a book title'
+    print 'Enter a book title: '
     @title = gets.chomp
 
-    print 'Enter a book author'
+    print 'Enter a book author: '
     @author = gets.chomp
   end
 
