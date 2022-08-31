@@ -20,4 +20,8 @@ class ListBooks
     end
     puts "\n"
   end
+
+  def to_json(*options)
+    @books.to_json(*options)
+  end
 end

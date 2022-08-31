@@ -24,4 +24,8 @@ class ListPersons
     end
     puts "\n"
   end
+
+  def to_json(*options)
+    @persons.to_json(*options)
+  end
 end

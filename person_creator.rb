@@ -34,7 +34,7 @@ class PersonCreator
     when 'y'
       Student.new(age, classroom, name, parent_permission: true)
     when 'n'
-      Student.new(age, name, parent_permission: false)
+      Student.new(age, classroom, name, parent_permission: false)
     else
       puts 'Invalid Input: Enter a valid option'
     end

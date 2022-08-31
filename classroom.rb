@@ -12,4 +12,15 @@ class Classroom
     @students.push(student)
     student.classroom = self
   end
+
+  def as_json(_options = {})
+    {
+      label: @label,
+      students: @students
+    }
+  end
+
+  def to_json(*options)
+    as_json(*options).to_json(*options)
+  end
 end
