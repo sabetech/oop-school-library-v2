@@ -1,5 +1,5 @@
 class ListPersons
-  attr_reader :persons
+  attr_accessor :persons
 
   def initialize(persons = [])
     @persons = persons
@@ -7,10 +7,6 @@ class ListPersons
 
   def push_person(person)
     @persons << person
-  end
-
-  def set_persons(persons)
-    @persons = persons
   end
 
   def print

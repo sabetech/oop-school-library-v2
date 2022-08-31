@@ -9,23 +9,25 @@ class PersonsFile
   end
 
   def write
-    self.create_file(@file_path) unless File.exist?(@file_path)
+    create_file(@file_path) unless File.exist?(@file_path)
     File.write(@file_path, JSON.pretty_generate(@persons))
   end
 
   def read
-    if File.exist?(@file_path)
-      mypersons = []
-      serialized_persons = JSON.parse(File.read(@file_path))
-      serialized_persons.each do |person|
-        mypersons << case person['class_name']
-                          when 'Student'
-                            Student.new(person['age'], person['classroom'], person['name'], parent_permission: person['parent_permission']).modify_id(person['id'])
-                          when 'Teacher'
-                            Teacher.new(person['age'], person['specialization'], name: person['name']).modify_id(person['id'])
-                          end                            
-                        end
-        @persons.set_persons(mypersons)
+    return unless File.exist?(@file_path)
+
+    mypersons = []
+    serialized_persons = JSON.parse(File.read(@file_path))
+    serialized_persons.each do |person|
+      mypersons << case person['class_name']
+                   when 'Student'
+                     Student.new(person['age'], person['classroom'], person['name'],
+                                 parent_permission: person['parent_permission']).modify_id(person['id'])
+                   when 'Teacher'
+                     Teacher.new(person['age'], person['specialization'],
+                                 name: person['name']).modify_id(person['id'])
+                   end
+      @persons.persons = mypersons
     end
   end
 

@@ -14,7 +14,6 @@ require 'json'
 
 class App
   def initialize
-
     @list_books = ListBooks.new
     @list_persons = ListPersons.new
     @rentals = []
@@ -23,7 +22,7 @@ class App
 
     @books_file = BooksFile.new(@list_books)
     @books_file.read
-    
+
     @rentals_file = RentalsFile.new(@rentals)
     @rentals_file.read
   end
