@@ -14,12 +14,18 @@ require 'json'
 
 class App
   def initialize
+
     @list_books = ListBooks.new
     @list_persons = ListPersons.new
     @rentals = []
     @persons_file = PersonsFile.new(@list_persons)
+    @persons_file.read
+
     @books_file = BooksFile.new(@list_books)
+    @books_file.read
+    
     @rentals_file = RentalsFile.new(@rentals)
+    @rentals_file.read
   end
 
   def run

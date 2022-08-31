@@ -38,9 +38,16 @@ class Person < Nameable
     as_json(*options).to_json(*options)
   end
 
+  def modify_id(id)
+    @id = id
+    self
+  end
+
   private
 
   def of_age?
     @age > 18
   end
+
+ 
 end

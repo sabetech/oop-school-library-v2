@@ -21,6 +21,10 @@ class ListBooks
     puts "\n"
   end
 
+  def set_books(books)
+    @books = books 
+  end
+
   def to_json(*options)
     @books.to_json(*options)
   end

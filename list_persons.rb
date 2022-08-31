@@ -9,6 +9,10 @@ class ListPersons
     @persons << person
   end
 
+  def set_persons(persons)
+    @persons = persons
+  end
+
   def print
     puts "\nList of Persons: "
     if @persons.length.zero?
