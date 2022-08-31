@@ -1,6 +1,6 @@
-require_relative '../rental.rb'
-require_relative '../person.rb'
-require_relative '../book.rb'
+require_relative '../rental'
+require_relative '../person'
+require_relative '../book'
 
 describe 'Rental Tests' do
   context 'Test Rental When ' do
