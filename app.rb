@@ -7,11 +7,24 @@ require './person_creator'
 require './list_books'
 require './list_persons'
 require './rental_creator'
+require './persons_file'
+require './books_file'
+require './rentals_file'
+require 'json'
+
 class App
   def initialize
     @list_books = ListBooks.new
     @list_persons = ListPersons.new
     @rentals = []
+    @persons_file = PersonsFile.new(@list_persons)
+    @persons_file.read
+
+    @books_file = BooksFile.new(@list_books)
+    @books_file.read
+
+    @rentals_file = RentalsFile.new(@rentals)
+    @rentals_file.read
   end
 
   def run
@@ -45,6 +58,7 @@ class App
     when 6
       list_rentals
     when 7
+      save
       puts 'Thank you for using School Library App'
       exit
     else
@@ -80,5 +94,11 @@ class App
   def create_somebody()
     person = PersonCreator.new.person
     @list_persons.push_person(person) unless person.nil?
+  end
+
+  def save
+    @persons_file.write
+    @books_file.write
+    @rentals_file.write
   end
 end

@@ -1,5 +1,5 @@
 class ListPersons
-  attr_reader :persons
+  attr_accessor :persons
 
   def initialize(persons = [])
     @persons = persons
@@ -23,5 +23,9 @@ class ListPersons
       end
     end
     puts "\n"
+  end
+
+  def to_json(*options)
+    @persons.to_json(*options)
   end
 end

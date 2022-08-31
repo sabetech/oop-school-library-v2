@@ -11,4 +11,15 @@ class Book
   def add_rental(person, date)
     Rental.new(date, person, self)
   end
+
+  def as_json(_options = {})
+    {
+      title: @title,
+      author: @author
+    }
+  end
+
+  def to_json(*options)
+    as_json(*options).to_json(*options)
+  end
 end

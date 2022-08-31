@@ -1,0 +1,17 @@
+[
+  {
+    "date": "2003-2-2",
+    "person": {
+      "id": 946,
+      "name": "Gary Util",
+      "age": 12,
+      "parent_permission": true,
+      "classroom": "B2Y",
+      "class_name": "Student"
+    },
+    "book": {
+      "title": "Row Row",
+      "author": "Natly Blin"
+    }
+  }
+]
