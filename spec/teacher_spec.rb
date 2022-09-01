@@ -22,4 +22,8 @@ describe 'Teacher' do
     new_teacher = Teacher.new(45, 'Programming', name: 'John Doe')
     expect(new_teacher.can_use_services?).to eq(true)
   end
+
+  it 'Should convert to json' do
+    expect(JSON.parse(JSON.generate(@teacher))["specialization"]).to eq(@teacher.specialization)
+  end
 end

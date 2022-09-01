@@ -1,4 +1,5 @@
-require_relative '../person.rb'
+require 'json'
+require_relative '../person'
 
 describe 'Person' do
   before(:each) do
@@ -31,5 +32,16 @@ describe 'Person' do
   it 'Should return true when correct_name method is called' do
     new_person = Person.new(29, 'TestPerson', parent_permission: true)
     expect(new_person.correct_name).to eq('TestPerson')
+  end
+
+  it 'Should convert to json' do
+    json = {
+      id: @person.id,
+      name: @person.name,
+      age: @person.age,
+      parent_permission: @person.parent_permission
+    }
+
+    expect(JSON.generate @person).to eq(JSON.generate json)
   end
 end

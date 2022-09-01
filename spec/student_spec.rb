@@ -24,4 +24,8 @@ describe 'Student' do
     new_student = Student.new(28, 'John', parent_permission: true)
     expect(new_student.play_hooky).to eq("¯\(ツ)/¯")
   end
+
+  it 'Should convert to json' do
+    expect(JSON.parse(JSON.generate(@student))["classroom"]).to eq(@student.classroom)
+  end
 end

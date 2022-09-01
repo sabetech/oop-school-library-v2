@@ -16,4 +16,13 @@ describe Book do
 
     expect(@book.author).to eq('My Test Author')
   end
+
+  it 'Should convert to json' do
+    json = {
+      title: @book.title,
+      author: @book.author
+    }
+
+    expect(JSON.generate @book).to eq(JSON.generate json)
+  end
 end
