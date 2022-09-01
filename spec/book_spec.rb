@@ -23,6 +23,6 @@ describe Book do
       author: @book.author
     }
 
-    expect(JSON.generate @book).to eq(JSON.generate json)
+    expect(JSON.generate(@book)).to eq(JSON.generate(json))
   end
 end

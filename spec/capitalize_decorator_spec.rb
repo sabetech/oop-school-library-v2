@@ -1,5 +1,5 @@
-require_relative '../person.rb'
-require_relative '../capitalize_decorator.rb'
+require_relative '../person'
+require_relative '../capitalize_decorator'
 
 describe CapitalizeDecorator do
   context 'When testing decorator classes' do

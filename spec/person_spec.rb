@@ -42,6 +42,6 @@ describe 'Person' do
       parent_permission: @person.parent_permission
     }
 
-    expect(JSON.generate @person).to eq(JSON.generate json)
+    expect(JSON.generate(@person)).to eq(JSON.generate(json))
   end
 end

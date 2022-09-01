@@ -1,4 +1,4 @@
-require_relative '../person.rb'
+require_relative '../person'
 require_relative '../trimmer_decorator'
 
 describe TrimmerDecorator do

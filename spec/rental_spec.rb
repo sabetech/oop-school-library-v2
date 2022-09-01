@@ -23,8 +23,8 @@ describe 'Rental Tests' do
         person: @rental.person,
         book: @rental.book
       }
-  
-      expect(JSON.generate @rental).to eq(JSON.generate json)
+
+      expect(JSON.generate(@rental)).to eq(JSON.generate(json))
     end
   end
 end

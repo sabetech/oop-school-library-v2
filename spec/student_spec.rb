@@ -26,6 +26,6 @@ describe 'Student' do
   end
 
   it 'Should convert to json' do
-    expect(JSON.parse(JSON.generate(@student))["classroom"]).to eq(@student.classroom)
+    expect(JSON.parse(JSON.generate(@student))['classroom']).to eq(@student.classroom)
   end
 end
