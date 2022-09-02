@@ -32,7 +32,7 @@ describe 'Person' do
     expect(new_person.can_use_services?).to eq(true)
   end
 
-  it 'Should return true when correct_name method is called' do
+  it 'Should return the corrected name when using CapitalizeDecorator and TrimmerDecorator' do
     new_person = Person.new(29, 'TestPersontestperson', parent_permission: true)
     capitalizedPerson = CapitalizeDecorator.new(new_person)
     capitalizedPerson.correct_name
