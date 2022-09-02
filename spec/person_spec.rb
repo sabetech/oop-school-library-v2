@@ -34,18 +34,18 @@ describe 'Person' do
 
   it 'Should return the corrected name when using CapitalizeDecorator and TrimmerDecorator' do
     new_person = Person.new(29, 'TestPersontestperson', parent_permission: true)
-    capitalizedPerson = CapitalizeDecorator.new(new_person)
-    capitalizedPerson.correct_name
-    capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+    capitalized_person = CapitalizeDecorator.new(new_person)
+    capitalized_person.correct_name
+    capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
 
-    expect(capitalizedTrimmedPerson.correct_name).to eq('Testperson')
+    expect(capitalized_trimmed_person.correct_name).to eq('Testperson')
   end
 
   it 'Should add a rental when add_rental method is called' do
     @person.rentals = []
     new_book = Book.new('test title', 'test author')
     @person.add_rental(new_book, '2022.09.09')
-    
+
     expect(@person.rentals.size).to eq(1)
   end
 
