@@ -59,3 +59,7 @@ Give a ⭐️ if you like this project!
 
 - Microverse 
 - Stackoverflow from helping me out when I get stuck
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
