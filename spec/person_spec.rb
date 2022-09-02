@@ -23,13 +23,13 @@ describe 'Person' do
   end
 
   it 'Should return true if the age is greater than or equal to 18' do
-    new_person = Person.new(15, 'TestPerson', parent_permission: false)
-    expect(new_person.can_use_services?).to eq(false)
+    new_person = Person.new(22, 'TestPerson', parent_permission: false)
+    expect(new_person.can_use_services?).to eq(true)
   end
 
   it 'Should instead return false if age is less than or equal to 18' do
-    new_person = Person.new(22, 'TestPerson', parent_permission: false)
-    expect(new_person.can_use_services?).to eq(true)
+    new_person = Person.new(15, 'TestPerson', parent_permission: false)
+    expect(new_person.can_use_services?).to eq(false)
   end
 
   it 'Should return the corrected name when using CapitalizeDecorator and TrimmerDecorator' do
