@@ -1,5 +1,8 @@
 require 'json'
 require_relative '../person'
+require_relative '../book'
+require_relative '../capitalize_decorator'
+require_relative '../trimmer_decorator'
 
 describe 'Person' do
   before(:each) do
@@ -24,14 +27,26 @@ describe 'Person' do
     expect(new_person.can_use_services?).to eq(false)
   end
 
-  it 'Should return true if the age is greater than or equal to 18' do
+  it 'Should instead return false if age is less than or equal to 18' do
     new_person = Person.new(22, 'TestPerson', parent_permission: false)
     expect(new_person.can_use_services?).to eq(true)
   end
 
   it 'Should return true when correct_name method is called' do
-    new_person = Person.new(29, 'TestPerson', parent_permission: true)
-    expect(new_person.correct_name).to eq('TestPerson')
+    new_person = Person.new(29, 'TestPersontestperson', parent_permission: true)
+    capitalizedPerson = CapitalizeDecorator.new(new_person)
+    capitalizedPerson.correct_name
+    capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+
+    expect(capitalizedTrimmedPerson.correct_name).to eq('Testperson')
+  end
+
+  it 'Should add a rental when add_rental method is called' do
+    @person.rentals = []
+    new_book = Book.new('test title', 'test author')
+    @person.add_rental(new_book, '2022.09.09')
+    
+    expect(@person.rentals.size).to eq(1)
   end
 
   it 'Should convert to json' do
